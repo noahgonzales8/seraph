@@ -17,7 +17,6 @@ body {
 }
 
 .container {
-    display: none;
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
@@ -81,39 +80,32 @@ input[type="submit"]:hover {
 </head>
 <body>
 
-<div class="password-prompt">
-    <h1>Welcome to the Seraph Admin Panel</h1>
-    <h2>Please enter your password to continue.</h2>
-    <form onsubmit="checkPassword(); return false;">
-        <input type="password" id="password" placeholder="Enter Password" required>
-        <input type="submit" value="Submit">
-    </form>
-</div>
-
-<div class="container" id="admin-panel">
+<div class="container">
     <h1>Admin Panel</h1>
 
     <button class="button" onclick="blacklistPrompt()">Blacklist</button>
+    <button class="button" onclick="removeBlacklistPrompt()">Remove Blacklist</button>
     <button class="button" onclick="banPrompt()">Ban</button>
+    <button class="button" onclick="removeBanPrompt()">Remove Ban</button>
 </div>
 
 <script>
-function checkPassword() {
-    var password = document.getElementById("password").value;
-    if (password === "8Q$K=M2!") { // Change "your_password_here" to your desired password
-        document.querySelector('.password-prompt').style.display = "none";
-        document.getElementById("admin-panel").style.display = "block";
-    } else {
-        alert("Incorrect password. Please try again.");
-    }
-}
-
 function blacklistPrompt() {
     var ip = prompt("Enter IP Address to blacklist:");
     if (ip !== null) {
         var confirmation = confirm("Are you sure you want to blacklist " + ip + "?");
         if (confirmation) {
             alert("User with IP " + ip + " has been blacklisted.");
+        }
+    }
+}
+
+function removeBlacklistPrompt() {
+    var ip = prompt("Enter the IP that the blacklist is under:");
+    if (ip !== null) {
+        var confirmation = prompt("Type 'YES' to confirm removing blacklist from: " + ip);
+        if (confirmation === "YES") {
+            alert("Blacklist removed from IP: " + ip);
         }
     }
 }
@@ -129,6 +121,16 @@ function banPrompt() {
             }
         } else {
             alert("Please enter a valid number of days.");
+        }
+    }
+}
+
+function removeBanPrompt() {
+    var ip = prompt("Enter the IP that the ban is under:");
+    if (ip !== null) {
+        var confirmation = prompt("Type 'YES' to confirm removing ban from: " + ip);
+        if (confirmation === "YES") {
+            alert("Ban removed from IP: " + ip);
         }
     }
 }
