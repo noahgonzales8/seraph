@@ -17,6 +17,7 @@ body {
 }
 
 .container {
+    display: none;
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
@@ -80,7 +81,16 @@ input[type="submit"]:hover {
 </head>
 <body>
 
-<div class="container">
+<div class="password-prompt">
+    <h1>Welcome to Seraph Admin Panel</h1>
+    <h2>Enter your password to continue.</h2>
+    <form onsubmit="checkPassword(); return false;">
+        <input type="password" id="password" placeholder="Enter Password" required>
+        <input type="submit" value="Submit">
+    </form>
+</div>
+
+<div class="container" id="admin-panel">
     <h1>Admin Panel</h1>
 
     <button class="button" onclick="blacklistPrompt()">Blacklist</button>
@@ -90,6 +100,16 @@ input[type="submit"]:hover {
 </div>
 
 <script>
+function checkPassword() {
+    var password = document.getElementById("password").value;
+    if (password === "your_password_here") { // Change "your_password_here" to your desired password
+        document.querySelector('.password-prompt').style.display = "none";
+        document.getElementById("admin-panel").style.display = "block";
+    } else {
+        alert("Incorrect password. Please try again.");
+    }
+}
+
 function blacklistPrompt() {
     var ip = prompt("Enter IP Address to blacklist:");
     if (ip !== null) {
