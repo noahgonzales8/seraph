@@ -98,6 +98,9 @@ input[type="submit"]:hover {
     <button class="button" onclick="banPrompt()">Ban</button>
     <button class="button" onclick="removeBanPrompt()">Remove Ban</button>
     <button class="button" onclick="removeAdminAccess()">Remove Admin Access</button>
+    <button class="button" onclick="addAdminAccess()">Add Administrator</button>
+    <button class="button" onclick="addModeratorAccess()">Add Moderator</button>
+    <button class="button" onclick="removeModeratorAccess()">Remove Moderator</button>
 </div>
 
 <script>
@@ -162,6 +165,36 @@ function removeAdminAccess() {
         var confirmation = confirm("Are you sure you want to remove administrator access from the user " + email + "?");
         if (confirmation) {
             alert("Administrator access removed from " + email);
+        }
+    }
+}
+
+function addAdminAccess() {
+    var email = prompt("What email do you wish to add as Administrator?");
+    if (email !== null) {
+        var confirmation = confirm("Are you sure you want to add administrator access to the user " + email + "?");
+        if (confirmation) {
+            alert("Administrator access added to " + email);
+        }
+    }
+}
+
+function addModeratorAccess() {
+    var email = prompt("What email do you wish to add as Moderator?");
+    if (email !== null) {
+        var confirmation = confirm("Are you sure you want to add moderator access to the user " + email + "?");
+        if (confirmation) {
+            alert("Moderator access added to " + email);
+        }
+    }
+}
+
+function removeModeratorAccess() {
+    var email = prompt("What email with Moderator access do you wish to remove?");
+    if (email !== null) {
+        var confirmation = confirm("Are you sure you want to remove moderator access from the user " + email + "?");
+        if (confirmation) {
+            alert("Moderator access removed from " + email);
         }
     }
 }
