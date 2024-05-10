@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Premium Page</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: gold; /* Updated background color to gold */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+}
+
+.benefits {
+    margin-bottom: 20px;
+}
+
+.benefit {
+    margin: 10px 0;
+}
+
+.button {
+    display: block;
+    width: 200px;
+    padding: 10px;
+    margin: 20px auto;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #FFD700;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Seraph Premium</h1>
+    <div class="benefits">
+        <div class="benefit">Get to change the name of one game per month.</div>
+        <div class="benefit">Ad-free experience</div>
+        <div class="benefit">Get to change the thumbnail of a game once every month</div>
+        <div class="benefit">Get a premium badge next to your name, and a gold name tag.</div>
+      <div class="benefit"> Get 2x Seraph Points every day. </div>
+      <h2> $15/yr or $30 one time. <h2>
+    </div>
+    <button class="button" onclick="purchasePremiumYearly()">Buy Yearly</button>
+        <button class="button" onclick="purchasePremiumOneTime()"> Buy One Time </button>
+</div>
+
+<script>
+function purchasePremiumYearly() {
+    // Add purchase premium functionality here
+    alert("Redirecting to purchase page...");
+  window.location.href = "https://seraphremake.vercel.app?msopen=/member/plans/cbiv7jplmr";
+}
+  function purchasePremiumOneTime() {
+alert("Redirecting to purchase page...");
+ window.location.href = "https://seraphremake.vercel.app?msopen=/member/plans/entxnwomzk";
+ }
+</script>
+
+</body>
+</html>
