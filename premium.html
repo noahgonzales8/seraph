@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Premium Page</title>
+<title>Seraph Premium</title>
 <style>
 body {
     font-family: Arial, sans-serif;
@@ -52,6 +52,11 @@ h1 {
 
 .button:hover {
     background-color: #FFD700;
+  }
+.terms-link {
+    font-size: 14px;
+    color: black; /* Updated link color to gold */
+    text-decoration: none;
 }
 </style>
 </head>
@@ -69,7 +74,9 @@ h1 {
     </div>
     <button class="button" onclick="purchasePremiumYearly()">Buy Yearly</button>
         <button class="button" onclick="purchasePremiumOneTime()"> Buy One Time </button>
-</div>
+<div class="terms">
+        <a href="premiumterms.html" class="terms-link">Terms Apply. Click here for more details.</a>
+    </div>
 
 <script>
 function purchasePremiumYearly() {
